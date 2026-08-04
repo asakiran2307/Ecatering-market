@@ -1,7 +1,11 @@
 // api.js — Centralized API client
-const BASE_URL = (window.location.origin && window.location.origin.startsWith('http'))
-  ? (window.location.origin.includes(':5000') ? '/api' : 'http://localhost:5000/api')
-  : 'http://localhost:5000/api';
+// Use relative /api path on Vercel (or any deployed host).
+// Only fall back to localhost:5000 when running on localhost WITHOUT port 5000
+// (i.e. opening index.html directly as a file, which is unusual).
+const _origin = window.location.origin;
+const BASE_URL = (_origin.includes('localhost') && !_origin.includes(':5000'))
+  ? 'http://localhost:5000/api'
+  : '/api';
 
 function getToken() {
   return localStorage.getItem('ecatring_token');
