@@ -1,3 +1,17 @@
+[project]
+name = "ecatring"
+version = "1.0.0"
+description = "Ecatring — Catering Marketplace"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+    "PyJWT>=2.8.0",
+    "bcrypt>=4.1.0",
+    "python-dotenv>=1.0.0",
+    "psycopg2-binary>=2.9.9",
+]
+
 [tool.pyrefly]
 # Set the source root to backend/ so Pyrefly resolves imports like
 # `from database import ...` and `from routes.auth import ...` correctly.
