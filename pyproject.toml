@@ -1,0 +1,10 @@
+[tool.pyrefly]
+# Set the source root to backend/ so Pyrefly resolves imports like
+# `from database import ...` and `from routes.auth import ...` correctly.
+source_root = "backend"
+
+# Exclude standalone scripts that are run directly (not imported as modules)
+ignore = [
+    "backend/seed.py",
+    "backend/init_pg.py",
+]
